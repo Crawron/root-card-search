@@ -48,7 +48,7 @@ function CardCard(props: Card) {
 			</div> */}
 			<div
 				className="rounded text-white shadow w-full h-72 p-4 bg-cover"
-				style={{ backgroundImage: `url('../assets/${assetPath}.png')` }}
+				style={{ backgroundImage: `url('/${assetPath}.png')` }}
 			/>
 			{/* <div className="flex gap-2">
 				<span className="font-semibold flex-1">{name}</span>
