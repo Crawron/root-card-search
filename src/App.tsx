@@ -72,6 +72,7 @@ function CardCard(props: Card) {
 				<span>{craftingPieces?.map(([c]) => c).join(" ")}</span>
 			</div> */}
 			<img
+				loading="lazy"
 				className="transition-shadow rounded shadow hover:shadow-md w-full overflow-hidden"
 				src={`/${assetPath}.png`}
 			/>
