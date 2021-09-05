@@ -76,7 +76,7 @@ function TextInput(props: {
 }) {
 	const { value, onChange, placeholder } = props
 	return (
-		<div className="flex flex-1 -mb-2.5 h-9 overflow-hidden place-items-center border-b-2 border-current">
+		<div className="flex flex-1 -mb-2.5 h-9 overflow-hidden place-items-center border-b-2 border-current min-w-min">
 			<div className="px-1.5">
 				<IconSearch />
 			</div>
