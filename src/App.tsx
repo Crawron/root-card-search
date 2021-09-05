@@ -33,7 +33,7 @@ function App() {
 		.map(renderCard)
 
 	return (
-		<div className="App p-4 py-16 w-full max-w-3xl mx-auto">
+		<div className="App p-4 py-16 w-full max-w-6xl mx-auto">
 			<div>
 				<div className="flex flex-wrap gap-2 items-end">
 					<Logo />
@@ -65,7 +65,7 @@ function App() {
 function CardCard(props: Card) {
 	const { name, description, amount, suit, assetPath, craftingPieces } = props
 	return (
-		<div className="transition-all cursor-pointer transform hover:-translate-y-1 active:translate-y-0 active:brightness-75">
+		<div className="transition-all cursor-pointer select-none transform hover:-translate-y-1 active:translate-y-0 active:brightness-75">
 			{/* <div className="flex px-4 gap-4">
 				<span>{suit}</span>
 				<div className="flex-1" />
