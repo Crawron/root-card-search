@@ -133,9 +133,29 @@ export const favorCards = (): Card[] => {
 	}))
 }
 
+function dominanceCards(): Card[] {
+	const suit: Suit[] = ["Fox", "Rabbit", "Mouse", "Bird"]
+	const asset = ["card-41", "card-38", "card-39", "card-40"]
+
+	return suit.map((suit, i): Card => {
+		const regularDescription = `You win the game if you rule three ${suit.toLowerCase()} at the start of your Birdsong.`
+		const birdDescription = `You win the game if you rule two oppsite corners at the start of your Birdsong.`
+
+		return {
+			type: "Dominance",
+			amount: 1,
+			assetPath: asset[i],
+			description: `If you have at least 10 points, play during Daylight and remove your score marker. ${
+				suit == "Bird" ? birdDescription : regularDescription
+			}`,
+			name: "Dominance",
+			suit,
+		}
+	})
+}
+
 export const cardList: Card[] = [
 	...itemCards(),
-
 	...ambushCards(),
 	{
 		suit: "Bird",
@@ -242,4 +262,5 @@ export const cardList: Card[] = [
 		craftingPieces: ["Mouse"],
 	},
 	...favorCards(),
+	...dominanceCards(),
 ]
