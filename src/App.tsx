@@ -77,7 +77,10 @@ function App() {
 			<div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]">
 				{filteredList.length
 					? filteredList
-					: cardList.sort(compareByName).sort(compareBySuit).map(renderCard)}
+					: [...cardList]
+							.sort(compareByName)
+							.sort(compareBySuit)
+							.map(renderCard)}
 			</div>
 		</div>
 	)
