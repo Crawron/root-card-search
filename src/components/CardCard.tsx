@@ -7,7 +7,7 @@ export function CardCard(props: Card) {
 
 	return (
 		<div
-			className="transition-all cursor-pointer transform hover:-translate-y-1 active:translate-y-0 active:brightness-75"
+			className="transition-all overflow-hidden cursor-pointer transform hover:-translate-y-1 active:translate-y-0 aspect-w-8 aspect-h-11 active:brightness-75 rounded shadow hover:shadow-md bg-gray-400"
 			draggable="false"
 		>
 			{/* <div className="flex px-4 gap-4">
@@ -17,7 +17,6 @@ export function CardCard(props: Card) {
             </div> */}
 			<img
 				loading="lazy"
-				className="transition-shadow rounded shadow hover:shadow-md w-full overflow-hidden"
 				onDragStart={(event) => event.preventDefault()}
 				src={`/${assetPath}.png`}
 			/>
