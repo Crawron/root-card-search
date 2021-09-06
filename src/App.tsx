@@ -10,6 +10,7 @@ import { IconMoon, IconSun } from "./components/Icons"
 import "./index.css"
 import { TextInput } from "./components/TextInput"
 import { CardCard } from "./components/CardCard"
+import { randomItem } from "./helpers"
 
 const fuse = new Fuse(cardList, {
 	keys: ["name", "description", "type"],
@@ -36,14 +37,7 @@ function App() {
 		.map((r) => r.item)
 		.map(renderCard)
 
-	function randomItem<T>(arr: T[]): T {
-		const index = Math.floor(Math.random() * arr.length)
-		return arr[index]
-	}
-
-	function randomCardName() {
-		return randomItem(cardList).name
-	}
+	const randomCardName = randomItem(cardList).name
 
 	return (
 		<div className="App p-4 py-16 w-full max-w-6xl mx-auto flex flex-col gap-6">
@@ -61,7 +55,7 @@ function App() {
 				<TextInput
 					value={nameFilter}
 					onChange={setNameFilter}
-					placeholder={!nameFilter ? randomCardName() : ""}
+					placeholder={randomCardName}
 				/>
 			</div>
 			<div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]">
