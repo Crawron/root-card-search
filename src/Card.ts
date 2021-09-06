@@ -21,3 +21,12 @@ export type Card = {
 	craftingPieces?: (Suit | "Any")[]
 	craftedItem?: Item
 }
+
+const suitOrder: Suit[] = ["Fox", "Rabbit", "Mouse", "Bird"]
+export function compareBySuit(cardA: Card, cardB: Card): number {
+	return suitOrder.indexOf(cardA.suit) - suitOrder.indexOf(cardB.suit)
+}
+
+export function compareByName(cardA: Card, cardB: Card): number {
+	return cardA.name.charCodeAt(0) - cardB.name.charCodeAt(0)
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Fuse from "fuse.js"
 import clsx from "clsx"
 
-import { Card } from "./Card"
+import { Card, compareByName, compareBySuit } from "./Card"
 import { cardList } from "./cardList"
 import { Logo } from "./components/Logo"
 import { IconMoon, IconSun } from "./components/Icons"
@@ -65,7 +65,9 @@ function App() {
 				/>
 			</div>
 			<div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]">
-				{filteredList.length ? filteredList : cardList.map(renderCard)}
+				{filteredList.length
+					? filteredList
+					: cardList.sort(compareByName).sort(compareBySuit).map(renderCard)}
 			</div>
 		</div>
 	)
