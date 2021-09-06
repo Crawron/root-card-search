@@ -20,12 +20,19 @@ const fuse = new Fuse(cardList, {
 const buttonStyle = clsx`grid place-items-center font-bold h-9 px-2 rounded transition-colors border border-black/10 hover:bg-black/20 active:bg-black/50 dark:border-white/10 dark:hover:bg-white/20 dark:active:bg-black`
 
 function App() {
-	const [darkTheme, setDarkTheme] = useState(false)
+	const [darkTheme, setDarkTheme] = useState(
+		localStorage.getItem("darkTheme") === "true"
+	)
 	const [nameFilter, setNameFilter] = useState("")
 
 	useEffect(() => {
-		if (darkTheme) document.documentElement.classList.add("dark")
-		else document.documentElement.classList.remove("dark")
+		if (darkTheme) {
+			localStorage.setItem("darkTheme", "true")
+			document.documentElement.classList.add("dark")
+		} else {
+			localStorage.removeItem("darkTheme")
+			document.documentElement.classList.remove("dark")
+		}
 	}, [darkTheme])
 
 	const renderCard = (card: Card) => (
