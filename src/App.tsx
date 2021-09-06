@@ -5,7 +5,7 @@ import clsx from "clsx"
 import { Card, compareByName, compareBySuit } from "./Card"
 import { cardList } from "./cardList"
 import { Logo } from "./components/Logo"
-import { IconMoon, IconSun } from "./components/Icons"
+import { IconGithub, IconMoon, IconSun } from "./components/Icons"
 
 import "./index.css"
 import { TextInput } from "./components/TextInput"
@@ -48,7 +48,14 @@ function App() {
 
 	return (
 		<div className="App p-4 py-16 w-full max-w-6xl mx-auto flex flex-col gap-6">
-			<div className="flex justify-end">
+			<div className="flex gap-2 justify-end">
+				<a
+					className={buttonStyle}
+					href="https://github.com/Crawron/root-card-search"
+					target="_blank"
+				>
+					<IconGithub />
+				</a>
 				<button
 					className={buttonStyle}
 					onClick={() => setDarkTheme(!darkTheme)}
