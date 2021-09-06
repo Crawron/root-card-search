@@ -13,7 +13,7 @@ import { CardCard } from "./components/CardCard"
 import { randomItem } from "./helpers"
 
 const fuse = new Fuse(cardList, {
-	keys: ["name", "description", "type"],
+	keys: ["name", "description", "type", "craftedItem"],
 	ignoreLocation: true,
 })
 
