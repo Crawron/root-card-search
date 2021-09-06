@@ -52,12 +52,14 @@ function App() {
 				<a
 					className={buttonStyle}
 					href="https://github.com/Crawron/root-card-search"
+					title="Source Code"
 					target="_blank"
 				>
 					<IconGithub />
 				</a>
 				<button
 					className={buttonStyle}
+					title="Switch Theme"
 					onClick={() => setDarkTheme(!darkTheme)}
 				>
 					{darkTheme ? <IconSun /> : <IconMoon />}
