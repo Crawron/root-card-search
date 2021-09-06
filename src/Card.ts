@@ -1,3 +1,5 @@
+import { checkSubset } from "./helpers"
+
 export type Suit = "Fox" | "Rabbit" | "Mouse" | "Bird"
 
 type CardType = "Improvement" | "Favor" | "Item" | "Ambush" | "Dominance"
@@ -29,4 +31,20 @@ export function compareBySuit(cardA: Card, cardB: Card): number {
 
 export function compareByName(cardA: Card, cardB: Card): number {
 	return cardA.name.charCodeAt(0) - cardB.name.charCodeAt(0)
+}
+
+export function checkCrafting(
+	{ craftingPieces }: Card,
+	pieces: Omit<Suit, "Bird">[]
+): boolean {
+	if (!craftingPieces) return false
+
+	if (craftingPieces?.includes("Any"))
+		return craftingPieces.length <= pieces.length
+
+	return checkSubset(craftingPieces, pieces)
+}
+
+export function countCards(cards: Card[]) {
+	return cards.reduce((p, { amount }) => p + amount, 0)
 }
